@@ -1,0 +1,197 @@
+.features {
+  padding-top: 150px;
+
+  &__container {
+    @include bigDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__image {
+    max-width: 726px;
+    max-height: 460px;
+    width: calc(100% + 20px);
+    z-index: 2;
+
+    @include on-tablet {
+      margin-left: 64px;
+    }
+    &--wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include on-tablet {
+        margin-top: 88px;
+        margin-right: 10px;
+      }
+      @include bigDesktop {
+        grid-column: 1 / 7;
+        margin-right: 70px;
+        margin-top: 40px;
+      }
+    }
+  }
+  &__bg {
+    min-width: 360px;
+    width: 100%;
+    max-width: 663px;
+    padding-bottom: clamp(210px, 58%, 379px);
+    position: absolute;
+    background: linear-gradient(
+      127.89deg,
+      #7961db -31.96%,
+      rgba(121, 97, 219, 0) 94.63%
+    );
+    border-radius: 11px;
+    transform: translate(-20px, -45px);
+    @include on-tablet {
+      border-radius: 20px;
+      transform: translate(-45px, -40px);
+    }
+    @include bigDesktop {
+      transform: translate(-45px, -40px);
+    }
+  }
+  &__content {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-tablet {
+      padding: 0 90px;
+      margin-top: 61px;
+      letter-spacing: -0.023em;
+      margin-right: 5px;
+    }
+
+    @include bigDesktop {
+      grid-column: 7 / -1;
+      padding: 0;
+      margin-top: 56px;
+      margin-left: 44px;
+      margin-right: 0px;
+    }
+  }
+  &__title {
+    @extend .montserrat-500;
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+
+    @include on-tablet {
+      font-size: 35px;
+      line-height: 40px;
+      width: initial;
+    }
+    @include bigDesktop {
+      margin-left: 20px;
+    }
+    &-br {
+      display: none;
+
+      @include on-tablet {
+        display: inline;
+      }
+      @include bigDesktop {
+        display: none;
+      }
+    }
+    &--accent {
+      @extend .montserrat-700;
+      color: #7961db;
+      letter-spacing: -0.02em;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 50px;
+      transform: translateX(-10px);
+    }
+    @include bigDesktop {
+      margin-left: 20px;
+      transform: translateX(0);
+    }
+
+    &--icon-reports {
+      margin-left: 11px;
+      @include on-tablet {
+        margin-top: 9px;
+      }
+    }
+    &--icon-calendar {
+      margin-left: 16px;
+      width: 24px;
+      height: 29px;
+
+      @include on-tablet {
+        margin-top: 8px;
+      }
+    }
+
+    &--reports {
+      margin-top: 47px;
+      @include on-tablet {
+        margin-top: 58px;
+      }
+      @include bigDesktop {
+        margin-top: 56px;
+      }
+    }
+    &--calendar {
+      margin-top: 31px;
+      @include on-tablet {
+        margin-top: 36px;
+      }
+    }
+    &--title {
+      margin-top: 24px;
+      @extend .montserrat-600;
+      font-size: 20px;
+      line-height: 1.22;
+      color: rgba(34, 34, 34, 1);
+      @include on-tablet {
+        margin-top: 0;
+        letter-spacing: -0.001em;
+      }
+      @include bigDesktop {
+        letter-spacing: 0em;
+        margin-left: 2px;
+      }
+    }
+    &--text {
+      @extend .montserrat-400;
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(114, 114, 114, 1);
+      margin-top: 12px;
+
+      @include on-tablet {
+        line-height: 17px;
+        margin-top: 10px;
+        letter-spacing: 0.002em;
+      }
+
+      &-br {
+        display: none;
+        @include on-tablet {
+          display: inline;
+        }
+        @include bigDesktop {
+          display: none;
+        }
+      }
+      &-wrapper {
+        @include on-tablet {
+          width: calc(100% - 80px);
+        }
+      }
+    }
+  }
+}

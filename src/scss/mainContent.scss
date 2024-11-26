@@ -1,0 +1,244 @@
+.mainContent {
+  &__ellipse {
+    min-width: 320px;
+    max-width: 530px;
+    padding-bottom: clamp(320px, 100%, 530px);
+    background: linear-gradient(
+      134.12deg,
+      #7961db 10.01%,
+      rgba(189, 173, 255, 0) 81.75%
+    );
+    border-radius: 50%;
+    position: relative;
+
+    @include bigDesktop {
+      width: 701px;
+      height: 701px;
+      max-width: initial;
+      padding-bottom: 0;
+    }
+  }
+  &__container {
+    @media (min-width: 844px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    // @include on-tablet {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    // }
+    @include bigDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+  }
+  &--wrapper {
+    position: relative;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 96px;
+      width: 530px;
+    }
+    @media (min-width: 844px) {
+      transform: translateX(-136px);
+    }
+    @include bigDesktop {
+      margin-left: 0px;
+      width: 50%;
+      transform: translate(86px, 0);
+    }
+  }
+  &__counter {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 3px 11px 3px 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-sizing: border-box;
+    border-radius: 11px;
+    background-color: rgba(237, 239, 242, 1);
+    z-index: 1;
+
+    @include on-tablet {
+      top: 88px;
+      left: -16px;
+      padding: 6px 15px 4px 9px;
+      border-radius: 15px;
+    }
+    @include bigDesktop {
+      margin-top: 27px;
+      min-width: 209px;
+      padding: 9px 10px 5px 8px;
+      gap: 9px;
+    }
+
+    &--icon {
+      width: 23px;
+      height: 23px;
+      @include on-tablet {
+        width: 31px;
+        height: 31px;
+      }
+      @include bigDesktop {
+        width: 39px;
+        height: 39px;
+      }
+    }
+    &--text {
+      @extend .montserrat-500;
+      font-size: 8px;
+      line-height: 8px;
+
+      @include on-tablet {
+        font-size: 11px;
+        line-height: 11px;
+      }
+      @include bigDesktop {
+        font-size: 14px;
+        line-height: 14px;
+      }
+    }
+  }
+  &__stat {
+    position: absolute;
+    object-fit: fill;
+    min-height: 270px;
+    width: clamp(405px, 138%, 870px);
+    height: clamp(230px, 80%, 494px);
+    top: clamp(43px, 12%, 100%);
+    left: clamp(54px, 23%, 100%);
+    max-width: 870px;
+    max-height: 494px;
+    background-image: url(../img/B2B_Stat.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transform: translateX(-20px);
+    @include on-tablet {
+      transform: translateX(0);
+      height: clamp(230px, 85%, 494px);
+    }
+    @include bigDesktop {
+      height: 594px;
+      width: 970px;
+      max-height: 588px;
+      max-width: 970px;
+    }
+  }
+  &__description {
+    margin-top: 25px;
+
+    @include on-tablet {
+      margin-top: 92px;
+      padding: 0 58px;
+    }
+    @include bigDesktop {
+      padding: 0;
+      margin-top: 0px;
+      width: 50%;
+    }
+    &__text {
+      @extend .montserrat-400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+      margin-top: 18px;
+
+      @include on-tablet {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &--br {
+        @media (max-width: 1023px) {
+          display: none;
+        }
+        @include bigDesktop {
+          display: none;
+        }
+      }
+    }
+  }
+  &__title {
+    @extend .montserrat-600;
+    font-size: 20px;
+    line-height: 1.22;
+
+    @include on-tablet {
+      font-size: 35px;
+      line-height: 40px;
+    }
+
+    &--br {
+      @media (max-width: 1001px) {
+        display: none;
+      }
+      @include bigDesktop {
+        display: none;
+      }
+    }
+
+    &--accent {
+      @extend .montserrat-700;
+      color: #7961db;
+    }
+  }
+
+  &__howItWorks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 34px;
+      margin-top: 44px;
+    }
+
+    @include bigDesktop {
+      position: absolute;
+    }
+
+    &--link {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      @extend .montserrat-600;
+      font-size: 18px;
+      line-height: 22px;
+      gap: 10px;
+      letter-spacing: 0.025em;
+      color: #7961db;
+    }
+    &--button {
+      @extend .montserrat-500;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 13px 14px 13px 15px;
+      border-radius: 10px;
+      display: flex;
+      letter-spacing: 0.02em;
+      width: 205px !important;
+      border: 1px solid rgba(121, 97, 219, 1);
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(121, 97, 219, 1);
+      cursor: pointer;
+      justify-content: center;
+
+      @include hover {
+        background-color: #634dbf;
+      }
+      @include bigDesktop {
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+.contactUs {
+  background: rgba(244, 241, 255, 1);
+  padding-top: 27px;
+  margin-top: 58px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include form-tablet {
+    background: initial;
+    margin-top: 50px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__img {
+    display: none;
+
+    @include form-desktop {
+      display: initial;
+      max-width: 287px;
+      transform: translate(-15px, 20px);
+    }
+    @include bigDesktop {
+      max-width: 401px;
+      transform: initial;
+      width: calc(100% + 20px);
+    }
+  }
+  &--wrapper {
+    z-index: 1;
+    overflow: hidden;
+    max-width: 1100px;
+    width: 100%;
+
+    @include form-tablet {
+      background: rgba(244, 241, 255, 1);
+      border-radius: 20px;
+      padding: 41px 41px 48px;
+    }
+    @include form-desktop {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 216px;
+        height: 216px;
+        background: #bdadff;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        border-radius: 50%;
+        transform: translate(43%, -44%);
+      }
+      &::after {
+        content: "";
+        width: 362px;
+        height: 362px;
+        background: #bdadff;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        border-radius: 50%;
+        transform: translate(52%, 51%);
+      }
+    }
+
+    @include bigDesktop {
+      padding: 41px 38px 48px 40px;
+      width: 1100px;
+      box-sizing: border-box;
+      margin-top: 44px;
+      gap: 40px;
+    }
+
+    &-title {
+      @include form-desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+      }
+    }
+  }
+  &__title {
+    @extend .montserrat-600;
+    font-size: 40px;
+    line-height: 49px;
+    color: rgba(121, 97, 219, 1);
+    @include on-desktop {
+      width: 50%;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: 100%;
+  @include form-desktop {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    transform: translateY(5px);
+    padding: 0 31px 20px 23px;
+    max-width: 53%;
+  }
+  @include bigDesktop {
+    box-sizing: border-box;
+    max-width: 50%;
+  }
+  &__label {
+    @extend .montserrat-500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(17, 20, 24, 1);
+    margin-left: 13px;
+    &:nth-child(1) {
+      margin-top: 20px;
+    }
+    &:nth-child(n + 2) {
+      margin-top: 29px;
+    }
+
+    @include on-tablet {
+      margin-left: 26px;
+
+      &:nth-child(n + 2) {
+        margin-top: 10px;
+      }
+    }
+  }
+  &__input {
+    @extend .montserrat-400;
+    font-size: 14px;
+    line-height: 17px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid rgba(121, 97, 219, 1);
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 6px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    letter-spacing: -0.06em;
+    position: relative;
+
+    @include on-smallDesktop {
+      margin-left: 4px;
+    }
+
+    // &:required:invalid {
+    //   border: 1px solid #ac2f33;
+    // }
+
+    // textarea:required:invalid {
+    // }
+
+    &--textarea {
+      height: 98px;
+      resize: none;
+      padding-top: 15px;
+    }
+  }
+  &__button {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    background: rgba(121, 97, 219, 1);
+    border-radius: 9px;
+    border: none;
+    margin-top: 39px;
+    @extend .montserrat-500;
+    font-size: 19px;
+    line-height: 23px;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-top: 20px;
+    }
+
+    @include hover {
+      background-color: #634dbf;
+    }
+  }
+}
+
+.form__error--text {
+  &-EN {
+    &::after {
+      content: "Please fill in the required fields";
+      position: absolute;
+      right: 30px;
+      color: #ac2f33;
+      @extend .montserrat-500;
+      font-size: 13px;
+      line-height: 15px;
+      text-align: end;
+    }
+  }
+
+  &-UA {
+    &::after {
+      content: "Будь ласка, заповніть необхідні поля";
+      position: absolute;
+      right: 30px;
+      color: #ac2f33;
+      @extend .montserrat-500;
+      font-size: 13px;
+      line-height: 15px;
+      text-align: end;
+    }
+  }
+}
+.form__error--border {
+  border: 1px solid #ac2f33;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}

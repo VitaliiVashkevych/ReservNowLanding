@@ -1,0 +1,81 @@
+<section class="contactUs">
+  <div class="container contactUs__container">
+    <div class="contactUs--wrapper">
+      <div class="contactUs--wrapper-title">
+        <h2 class="contactUs__title" data-i18n="form"></h2>
+
+        <img src="@img/contactUsImg.png" alt="" class="contactUs__img" />
+      </div>
+
+      <form action="" class="form">
+        <label
+          for="Name"
+          class="form__label form__label-name"
+          data-i18n="name"
+          data-i18n-error="formError"
+        ></label>
+        <input
+          type="text"
+          name="Ім'я"
+          id="Name"
+          placeholder="Ім'я"
+          class="form__input"
+          required
+          data-i18n-placeholder="namePlaceholder"
+        />
+
+        <label
+          for="Email"
+          class="form__label form__label-email"
+          data-i18n="email"
+          data-i18n-error="formError"
+        ></label>
+        <input
+          type="email"
+          name="Email"
+          id="Email"
+          placeholder="Email"
+          class="form__input"
+          required
+          data-i18n-placeholder="emailPlaceholder"
+        />
+
+        <label
+          for="Phone"
+          class="form__label form__label-phone"
+          data-i18n="phoneNumber"
+          data-i18n-error="formError"
+        ></label>
+        <input
+          type="tel"
+          name="Номер телефона"
+          id="Phone"
+          placeholder="Номер телефона"
+          class="form__input"
+          required
+        />
+
+        <label
+          for="Description"
+          class="form__label form__label-description"
+          data-i18n="message"
+          data-i18n-error="formError"
+        ></label>
+        <textarea
+          name="Description"
+          id="Description"
+          placeholder="Опис"
+          class="form__input form__input--textarea"
+          data-i18n-placeholder="messagePlaceholder"
+        ></textarea>
+
+        <button
+          class="form__button"
+          type="submit"
+          id="submit"
+          data-i18n="send"
+        ></button>
+      </form>
+    </div>
+  </div>
+</section>

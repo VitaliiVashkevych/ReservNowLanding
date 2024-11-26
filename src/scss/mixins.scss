@@ -1,0 +1,39 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin on-smallDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin bigDesktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+@mixin form-tablet {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+@mixin form-desktop {
+  @media (min-width: 870px) {
+    @content;
+  }
+}
+@mixin hover {
+  @media (hover: hover) {
+    transition: all 0.3s;
+    &:hover {
+      @content;
+    }
+  }
+}

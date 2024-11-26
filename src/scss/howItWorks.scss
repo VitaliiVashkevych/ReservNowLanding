@@ -1,0 +1,68 @@
+.howItWorks {
+  display: none;
+
+  @include on-tablet {
+    height: 285px;
+    position: relative;
+    background-color: rgba(242, 237, 255, 1);
+    margin-top: 97px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include bigDesktop {
+    margin-top: 136px;
+  }
+  &__bg {
+    @include on-tablet {
+      position: absolute;
+      height: 285px;
+      width: 100%;
+      background-image: url("../img/Mask.png");
+      background-repeat: no-repeat;
+      background-size: 100% 285px;
+    }
+  }
+  &__title {
+    @extend .montserrat-600;
+
+    @include on-tablet {
+      z-index: 2;
+
+      color: rgba(45, 29, 97, 1);
+      font-size: 30px;
+      line-height: 41px;
+      margin-top: 72px;
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+  }
+  &__button {
+    @extend .montserrat-500;
+    @include on-tablet {
+      z-index: 2;
+      font-size: 18px;
+      line-height: 22px;
+      height: 50px;
+      width: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(121, 97, 219, 1);
+      border-radius: 10px;
+      color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(121, 97, 219, 1);
+      box-sizing: border-box;
+      margin-top: 23px;
+      margin-left: 8px;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+
+      @include hover {
+        background-color: #634dbf;
+      }
+    }
+  }
+}
